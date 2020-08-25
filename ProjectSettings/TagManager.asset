@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Spawner
+  - Enemy
+  - Arrow
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - Player
+  - Collidable
+  - Arrows
+  - Enemy
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Ground0
+    uniqueID: 594593315
+    locked: 0
+  - name: Ground1
+    uniqueID: 4053863081
+    locked: 0
+  - name: Ground2
+    uniqueID: 2963394039
+    locked: 0
+  - name: Player
+    uniqueID: 3578151775
+    locked: 0
+  - name: Weapons
+    uniqueID: 3853624089
+    locked: 0

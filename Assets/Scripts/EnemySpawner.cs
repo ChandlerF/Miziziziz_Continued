@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     [SerializeField]
-    private float SpawnRadius = 4, time = 1.5f;
+    private float time = 1.5f;
 
     public GameObject[] Enemies;  //An array so you have the option to add more enemies
     public GameObject[] Spawners;

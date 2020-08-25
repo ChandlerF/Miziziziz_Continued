@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyMovement2 : MonoBehaviour
 {
-    public float speed;
+    public float Speed;
     private Transform target;
     public GameObject ScoreM;
 
@@ -19,7 +19,7 @@ public class EnemyMovement2 : MonoBehaviour
 
     void Update()
     {
-        transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+        transform.position = Vector2.MoveTowards(transform.position, target.position, Speed * Time.deltaTime);
     }
 
     private void OnTriggerEnter2D(Collider2D col)

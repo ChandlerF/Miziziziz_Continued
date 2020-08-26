@@ -8,6 +8,8 @@ public class EnemyMovement2 : MonoBehaviour
     private Transform target;
     public GameObject ScoreM;
 
+    //public CameraShake cameraShake;
+
     void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
@@ -24,10 +26,9 @@ public class EnemyMovement2 : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        // Debug.Log("ah");
         if (col.gameObject.tag == "Arrow")
         {
-            // Debug.Log("hi");
+            //StartCoroutine(cameraShake.Shake(.15f, .4f));
             ScoreM.GetComponent<ScoringManager>().Score++;
             FindObjectOfType<AudioManager>().Play("EnemyDeath");
             Destroy(gameObject);

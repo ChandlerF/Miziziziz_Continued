@@ -10,7 +10,7 @@ public class CameraShake : MonoBehaviour
 
         float Elapsed = 0.0f;
 
-        while (Elapsed < Duration)
+        if (Elapsed < Duration)
         {
             float X = Random.Range(-1f, 1f) * Magnitude;
             float Y = Random.Range(-1f, 1f) * Magnitude;
@@ -24,9 +24,7 @@ public class CameraShake : MonoBehaviour
 
 
             yield return null;
-
         }
-
         transform.localPosition = OriginalPos;
     }
 }

@@ -2446,25 +2446,25 @@ MonoBehaviour:
   Sounds:
   - Name: PlayerDeath
     Clip: {fileID: 8300000, guid: 82662734921f06641aa1a47f81ca168f, type: 3}
-    Volume: 1
+    Volume: 0.8
     Pitch: 1
     Loop: 0
     Source: {fileID: 0}
   - Name: EnemyDeath
     Clip: {fileID: 8300000, guid: 7d4b0c2034acb50439d41243e31ecdfb, type: 3}
-    Volume: 1
+    Volume: 0.5
     Pitch: 1
     Loop: 0
     Source: {fileID: 0}
   - Name: Restart
     Clip: {fileID: 8300000, guid: 7184b59f11394bd48ae653075afe5fb2, type: 3}
-    Volume: 1
+    Volume: 0.8
     Pitch: 1
     Loop: 0
     Source: {fileID: 0}
   - Name: ShootBow
     Clip: {fileID: 8300000, guid: 4797cba5d96628e4286f2fe95986a0e0, type: 3}
-    Volume: 1
+    Volume: 0.5
     Pitch: 1
     Loop: 0
     Source: {fileID: 0}

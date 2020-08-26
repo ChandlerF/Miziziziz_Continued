@@ -8,16 +8,16 @@ public class CameraShake : MonoBehaviour
     {
         Vector3 OriginalPos = transform.localPosition;
 
-        float Elapsed = 0.0f;
+        double Elapsed = 0.0f;
 
-        if (Elapsed < Duration)
+        while (Elapsed < Duration)
         {
             float X = Random.Range(-1f, 1f) * Magnitude;
             float Y = Random.Range(-1f, 1f) * Magnitude;
 
             transform.localPosition = new Vector3(X, Y, OriginalPos.z);
 
-            Elapsed += Time.deltaTime;
+            Elapsed += .01;  //Normally its Time.deltaTime, but .01 works and deltaTime doesn't
 
             Debug.Log("Duration: " + Duration);
             Debug.Log("Elapsed: " + Elapsed);

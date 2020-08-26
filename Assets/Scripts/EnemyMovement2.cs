@@ -8,15 +8,21 @@ public class EnemyMovement2 : MonoBehaviour
     private Transform target;
     public GameObject ScoreM;
 
-    //public CameraShake cameraShake;
+    public CameraShake cameraShake;
 
     void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         ScoreM = GameObject.Find("ScoringManager");
         //ScoringManager ScoreM = gameObject.GetComponent<ScoringManager>();
-         //ScoreX = ScoreM.GetComponent<ScoringManager>().Score;
+        //ScoreX = ScoreM.GetComponent<ScoringManager>().Score;
+        cameraShake = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraShake>();
 
+
+    }
+
+    void Awake()
+    {        
     }
 
     void Update()
@@ -28,7 +34,7 @@ public class EnemyMovement2 : MonoBehaviour
     {
         if (col.gameObject.tag == "Arrow")
         {
-            //StartCoroutine(cameraShake.Shake(.15f, .4f));
+            StartCoroutine(cameraShake.Shake(.15f, .4f));
             ScoreM.GetComponent<ScoringManager>().Score++;
             FindObjectOfType<AudioManager>().Play("EnemyDeath");
             Destroy(gameObject);

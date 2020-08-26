@@ -10,12 +10,13 @@ public class PlayerMovement : MonoBehaviour
     Vector2 Movement;
     [SerializeField] TMPro.TextMeshProUGUI ScoreText2;
 
+
+    public CameraShake Camera_Shake;
+
     void Update()  //Input
     {
         Movement.x = Input.GetAxisRaw("Horizontal");
         Movement.y = Input.GetAxisRaw("Vertical");
-
-
     }
 
     void FixedUpdate()  //Movement (physics)
@@ -26,11 +27,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-       // Debug.Log("ah");
         if (col.gameObject.tag == "Enemy")
         {
-            // Debug.Log("hi");
-            // Destroy(gameObject);
             PlayerDeath();
            
         }
@@ -38,6 +36,8 @@ public class PlayerMovement : MonoBehaviour
 
     public void PlayerDeath()
     {
+        StartCoroutine(Camera_Shake.Shake(.15f, .4f));
+
         FindObjectOfType<AudioManager>().Play("PlayerDeath");
 
         ScoreText2.text = "You Died!";

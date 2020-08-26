@@ -29,6 +29,7 @@ public class EnemyMovement2 : MonoBehaviour
         {
             // Debug.Log("hi");
             ScoreM.GetComponent<ScoringManager>().Score++;
+            FindObjectOfType<AudioManager>().Play("EnemyDeath");
             Destroy(gameObject);
         }
     }

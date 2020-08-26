@@ -12,13 +12,9 @@ public class ScoringManager : MonoBehaviour
     public int Score;
         void Update()
     {
-        if (Input.GetKey("escape"))
-        {
-            Application.Quit();
-        }
-
         if (Input.GetKeyDown(KeyCode.R))
         {
+            FindObjectOfType<AudioManager>().Play("Restart");
             SceneManager.LoadScene(0);
             Time.timeScale = 1;
         }

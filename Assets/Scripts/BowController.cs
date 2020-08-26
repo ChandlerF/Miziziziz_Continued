@@ -38,6 +38,9 @@ public class BowController : MonoBehaviour
 
 
             ShootingDirection.Normalize();
+
+            FindObjectOfType<AudioManager>().Play("ShootBow");
+
             GameObject Arrow = Instantiate(ArrowPrefab, transform.position, Quaternion.identity); //Spawn Arrow
             Arrow.GetComponent<Rigidbody2D>().velocity = ShootingDirection * ArrowSpeed; //Set Rigidbody Velocity (<- Vector2) to Shooting Direction(Vector2) * ArrowSpeed (float)
             Arrow.transform.Rotate(0.0f, 0.0f, Mathf.Atan2(ShootingDirection.y, ShootingDirection.x) * Mathf.Rad2Deg - 45f); //X and Y values are flipped because of Mathf.Atan2 --- -45f is to counter the sprite's defualt rotation

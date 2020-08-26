@@ -31,9 +31,17 @@ public class PlayerMovement : MonoBehaviour
         {
             // Debug.Log("hi");
             // Destroy(gameObject);
-            ScoreText2.text = "You Died!";
-            ScoreText2.fontSize = 100;
-            Time.timeScale = 0;
+            PlayerDeath();
+           
         }
+    }
+
+    public void PlayerDeath()
+    {
+        FindObjectOfType<AudioManager>().Play("PlayerDeath");
+
+        ScoreText2.text = "You Died!";
+        ScoreText2.fontSize = 100;
+        Time.timeScale = 0;
     }
 }

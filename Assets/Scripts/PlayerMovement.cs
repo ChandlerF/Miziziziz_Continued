@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
 
     public CameraShake Camera_Shake;
 
+
     void Update()  //Input
     {
         Movement.x = Input.GetAxisRaw("Horizontal");

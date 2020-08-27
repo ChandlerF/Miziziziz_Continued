@@ -16,13 +16,13 @@ public class EnemyMovement2 : MonoBehaviour
         ScoreM = GameObject.Find("ScoringManager");
         //ScoringManager ScoreM = gameObject.GetComponent<ScoringManager>();
         //ScoreX = ScoreM.GetComponent<ScoringManager>().Score;
-        cameraShake = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraShake>();
 
 
     }
 
     void Awake()
-    {        
+    {
+        cameraShake = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraShake>();
     }
 
     void Update()
@@ -34,10 +34,15 @@ public class EnemyMovement2 : MonoBehaviour
     {
         if (col.gameObject.tag == "Arrow")
         {
-            StartCoroutine(cameraShake.Shake(.15f, .4f));
-            ScoreM.GetComponent<ScoringManager>().Score++;
-            FindObjectOfType<AudioManager>().Play("EnemyDeath");
-            Destroy(gameObject);
+            EnemyDeath();
         }
+    }
+
+    public void EnemyDeath()
+    {
+        StartCoroutine(cameraShake.Shake(.15f, .4f));
+        ScoreM.GetComponent<ScoringManager>().Score++;
+        FindObjectOfType<AudioManager>().Play("EnemyDeath");
+        Destroy(gameObject, .16f);
     }
 }

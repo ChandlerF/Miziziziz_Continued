@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class CameraShake : MonoBehaviour
 {
+   // public bool Finished = false;
+
     public IEnumerator Shake (float Duration, float Magnitude)
     {
         Vector3 OriginalPos = transform.localPosition;
-
         double Elapsed = 0.0f;
 
         while (Elapsed < Duration)
@@ -26,5 +27,6 @@ public class CameraShake : MonoBehaviour
             yield return null;
         }
         transform.localPosition = OriginalPos;
+       // Finished = true;
     }
 }

@@ -12,6 +12,7 @@ public class EnemySpawner : MonoBehaviour
     private GameObject CurrentSpawner;
     public int Index;
     private GameObject Player;
+
     void Start()
     {
         StartCoroutine(SpawnAnEnemy());

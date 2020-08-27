@@ -37,7 +37,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void PlayerDeath()
     {
-        StartCoroutine(Camera_Shake.Shake(.15f, .4f));
+        Camera_Shake.ShakeCamera();
 
         FindObjectOfType<AudioManager>().Play("PlayerDeath");
 

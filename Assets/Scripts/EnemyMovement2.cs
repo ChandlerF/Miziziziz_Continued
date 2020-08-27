@@ -40,9 +40,9 @@ public class EnemyMovement2 : MonoBehaviour
 
     public void EnemyDeath()
     {
-        StartCoroutine(cameraShake.Shake(.15f, .4f));
+        cameraShake.ShakeCamera();
         ScoreM.GetComponent<ScoringManager>().Score++;
         FindObjectOfType<AudioManager>().Play("EnemyDeath");
-        Destroy(gameObject, .16f);
+        Destroy(gameObject);
     }
 }

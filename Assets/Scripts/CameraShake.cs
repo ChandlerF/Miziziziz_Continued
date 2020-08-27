@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class CameraShake : MonoBehaviour
 {
-   // public bool Finished = false;
+    public PlayerMovement Player;
+    public EnemySpawner Enemy;
+
 
     public IEnumerator Shake (float Duration, float Magnitude)
     {
@@ -27,6 +29,10 @@ public class CameraShake : MonoBehaviour
             yield return null;
         }
         transform.localPosition = OriginalPos;
-       // Finished = true;
+    }
+
+    public void ShakeCamera()
+    {
+        StartCoroutine(Shake(.10f, .3f));
     }
 }

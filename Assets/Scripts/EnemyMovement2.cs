@@ -8,6 +8,8 @@ public class EnemyMovement2 : MonoBehaviour
     private Transform target;
     public GameObject ScoreM;
 
+    public GameObject Blood;
+
     public CameraShake cameraShake;
 
     void Start()
@@ -43,6 +45,7 @@ public class EnemyMovement2 : MonoBehaviour
         cameraShake.ShakeCamera();
         ScoreM.GetComponent<ScoringManager>().Score++;
         FindObjectOfType<AudioManager>().Play("EnemyDeath");
+        Blood = Instantiate(Blood, gameObject.transform.position, gameObject.transform.rotation);
         Destroy(gameObject);
     }
 }

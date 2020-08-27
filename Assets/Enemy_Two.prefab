@@ -150,6 +150,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 5
   ScoreM: {fileID: 0}
+  Blood: {fileID: 862275935468567087, guid: dd5050f25473ab341856e1aee7d9864b, type: 3}
   cameraShake: {fileID: 0}
 --- !u!61 &4300612453854767388
 BoxCollider2D:

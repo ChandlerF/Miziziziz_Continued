@@ -12701,6 +12701,7 @@ MonoBehaviour:
   time: 1.4
   Enemies:
   - {fileID: 4300612453854767840, guid: 10288c476c6a97a428047a8500be32e4, type: 3}
+  - {fileID: 2641738686152447918, guid: fc5e6e9bfb7e2e3408fe7426d6534082, type: 3}
   Spawners: []
   Index: 0
 --- !u!4 &1775549625

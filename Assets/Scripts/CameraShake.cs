@@ -22,8 +22,8 @@ public class CameraShake : MonoBehaviour
 
             Elapsed += .01;  //Normally its Time.deltaTime, but .01 works and deltaTime doesn't
 
-            Debug.Log("Duration: " + Duration);
-            Debug.Log("Elapsed: " + Elapsed);
+            //Debug.Log("Duration: " + Duration);
+            //Debug.Log("Elapsed: " + Elapsed);
 
 
             yield return null;

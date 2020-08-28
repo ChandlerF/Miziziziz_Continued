@@ -9,6 +9,8 @@ public class FireBall : MonoBehaviour
     public Transform Player;
     private Vector2 Target;
 
+    public GameObject FireParticles;
+
     void Start()
     {
         Player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -28,16 +30,13 @@ public class FireBall : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        //if (col.CompareTag("Player"))
-        //{
-            DestroyFireBall();
-        //}
-        
+        DestroyFireBall();
     }
 
 
     void DestroyFireBall()
     {
+        FireParticles = Instantiate(FireParticles, gameObject.transform.position, gameObject.transform.rotation);
         Destroy(gameObject);
     }
 

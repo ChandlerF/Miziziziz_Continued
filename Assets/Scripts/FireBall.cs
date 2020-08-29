@@ -19,7 +19,7 @@ public class FireBall : MonoBehaviour
         Target = new Vector2(Player.position.x, Player.position.y);
 
 
-        float angle = Mathf.Atan2(Target.y, Target.x) * Mathf.Rad2Deg;
+        float angle = Mathf.Atan2(Target.y - gameObject.transform.position.y, Target.x - gameObject.transform.position.x) * Mathf.Rad2Deg;
         gameObject.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
 
     }

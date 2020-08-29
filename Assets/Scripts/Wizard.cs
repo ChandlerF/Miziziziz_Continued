@@ -51,7 +51,7 @@ public class Wizard : MonoBehaviour
         }
 
 
-        if(FireRate <= 0)
+        if(FireRate <= 0 && Vector2.Distance(transform.position, Player.position) < StoppingDistance && (Vector2.Distance(transform.position, Player.position) > RetreatDistance))
         {
             Instantiate(Fireball, transform.position, Quaternion.identity);
             FireRate = StartFireRate;

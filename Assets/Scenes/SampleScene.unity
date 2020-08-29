@@ -12700,7 +12700,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   time: 1.4
   Enemies:
-  - {fileID: 4300612453854767840, guid: 10288c476c6a97a428047a8500be32e4, type: 3}
   - {fileID: 2641738686152447918, guid: fc5e6e9bfb7e2e3408fe7426d6534082, type: 3}
   Spawners: []
   Index: 0
@@ -12874,7 +12873,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84f47d44defd3654ab754bdc79ddd6c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ScoreM: {fileID: 0}
+  ScoreM: {fileID: 1796701969}
   Enemies: []
 --- !u!4 &2112573555
 Transform:

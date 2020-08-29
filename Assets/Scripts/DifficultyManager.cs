@@ -9,23 +9,21 @@ public class DifficultyManager : MonoBehaviour
 
 
 
-    void Start()
-    {
-        ScoreM = GameObject.Find("ScoringManager");
-    }
-
     void Update()
     {
-        
         Enemies = GameObject.FindGameObjectsWithTag("Enemy");
         if(ScoreM.GetComponent<ScoringManager>().Score > 3)  //Whenever the score hits 4 the difficulty starts increasing
         {
-            float NewSpeed = (ScoreM.GetComponent<ScoringManager>().Score / 8) + 5;
+            float Score = ScoreM.GetComponent<ScoringManager>().Score;
+            float NewSpeed = Score / 8 + 5;
+            float NewFireRate = 3 - (Score / 25);
 
             foreach (GameObject Enemy in Enemies)
             {
-                Enemy.GetComponent<EnemyMovement2>().Speed = NewSpeed;
-                //Debug.Log(Enemy.GetComponent<EnemyMovement2>().Speed);  //Optional
+                //Enemy.GetComponent<EnemyMovement2>().Speed = NewSpeed;
+                Enemy.GetComponent<Wizard>().StartFireRate = NewFireRate;
+                //Debug.Log(GetComponent<Wizard>().StartFireRate);  //Optional
+                //Debug.Log("Ah");
             }
         }
     }

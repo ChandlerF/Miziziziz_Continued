@@ -100,7 +100,7 @@ MonoBehaviour:
   RetreatDistance: 4
   Player: {fileID: 0}
   FireRate: 0
-  StartFireRate: 2.5
+  StartFireRate: 3
   Fireball: {fileID: 7317491204022077850, guid: c0d660a5a0c9c364ebcd11c5dbff593c,
     type: 3}
   Enemy: {fileID: 4300612453854767843, guid: 10288c476c6a97a428047a8500be32e4, type: 3}

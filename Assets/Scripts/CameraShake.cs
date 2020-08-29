@@ -33,6 +33,6 @@ public class CameraShake : MonoBehaviour
 
     public void ShakeCamera()
     {
-        StartCoroutine(Shake(.10f, .3f));
+        StartCoroutine(Shake(.10f, .2f));
     }
 }

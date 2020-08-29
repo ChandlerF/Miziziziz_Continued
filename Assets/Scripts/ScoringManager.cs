@@ -8,6 +8,7 @@ public class ScoringManager : MonoBehaviour
 
     [SerializeField] TMPro.TextMeshProUGUI ScoreText1;
 
+    public DifficultyManager Difficulty;
 
     public int Score;
         void Update()
@@ -15,6 +16,7 @@ public class ScoringManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R))
         {
             FindObjectOfType<AudioManager>().Play("Restart");
+            Difficulty.ResetValues();  //Extra precaution towards a bug that saves the prefab's value from the last round (only for the first enemy though)
             SceneManager.LoadScene(0);
             Time.timeScale = 1;
         }

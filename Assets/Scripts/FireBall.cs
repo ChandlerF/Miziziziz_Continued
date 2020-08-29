@@ -50,12 +50,14 @@ public class FireBall : MonoBehaviour
     void DestroyFireBall1()  //Spawns Fire Particles
     {
         FireParticles = Instantiate(FireParticles, gameObject.transform.position, gameObject.transform.rotation);
+        FindObjectOfType<AudioManager>().Play("FireBallExtinguished");
         Destroy(gameObject);
     }
 
     void DestroyFireBall2()  //Spawns Smoke Particles
     {
         SmokeParticles = Instantiate(SmokeParticles, gameObject.transform.position, gameObject.transform.rotation);
+        FindObjectOfType<AudioManager>().Play("FireBallExtinguished");
         Destroy(gameObject);
     }
 

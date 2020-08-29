@@ -11,14 +11,11 @@ public class DifficultyManager : MonoBehaviour
     public Wizard WizardScript;
 
 
-
-    void Start()  //Sets the prefabs values since after the if(Score > 3) statement changes it
+    private void Awake()
     {
-        EnemyScript.Speed = 5;
-
-        WizardScript.StartFireRate = 3;
-        WizardScript.Speed = 4;
+        ResetValues();
     }
+
     void Update()
     {
         Enemies = GameObject.FindGameObjectsWithTag("Enemy");
@@ -26,7 +23,7 @@ public class DifficultyManager : MonoBehaviour
 
         if (Score > 3)  //Whenever the score hits 4 the difficulty starts increasing
         {
-            float EnemyNewSpeed = 5 + (Score / 8);
+            float EnemyNewSpeed = 4 + (Score / 10);
             float NewFireRate = 3 - (Score / 25);
             float WizardNewSpeed = 4 + (Score / 12);
 
@@ -38,5 +35,13 @@ public class DifficultyManager : MonoBehaviour
                 WizardScript.Speed = WizardNewSpeed;
             }
         }
+    }
+
+    public void ResetValues()  //Sets the prefabs values since after the if(Score > 3) statement changes it
+    {
+        EnemyScript.Speed = 4;
+
+        WizardScript.StartFireRate = 3;
+        WizardScript.Speed = 4;
     }
 }

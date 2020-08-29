@@ -10,12 +10,18 @@ public class FireBall : MonoBehaviour
     private Vector2 Target;
 
     public GameObject FireParticles;
+    public GameObject SmokeParticles;
 
     void Start()
     {
         Player = GameObject.FindGameObjectWithTag("Player").transform;
 
         Target = new Vector2(Player.position.x, Player.position.y);
+
+
+        float angle = Mathf.Atan2(Target.y, Target.x) * Mathf.Rad2Deg;
+        gameObject.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+
     }
 
     void Update()
@@ -24,19 +30,32 @@ public class FireBall : MonoBehaviour
 
         if(transform.position.x == Target.x && transform.position.y == Target.y)
         {
-            DestroyFireBall();
+            DestroyFireBall1();
         }
     }
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        DestroyFireBall();
+        if(col.tag == "Player")
+        {
+            DestroyFireBall1();
+        }
+        else
+        {
+            DestroyFireBall2();
+        }
     }
 
 
-    void DestroyFireBall()
+    void DestroyFireBall1()  //Spawns Fire Particles
     {
         FireParticles = Instantiate(FireParticles, gameObject.transform.position, gameObject.transform.rotation);
+        Destroy(gameObject);
+    }
+
+    void DestroyFireBall2()  //Spawns Smoke Particles
+    {
+        SmokeParticles = Instantiate(SmokeParticles, gameObject.transform.position, gameObject.transform.rotation);
         Destroy(gameObject);
     }
 

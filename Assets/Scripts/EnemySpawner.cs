@@ -8,25 +8,23 @@ public class EnemySpawner : MonoBehaviour
     private float time = 1.5f;
 
     public GameObject[] Enemies;  //An array so you have the option to add more enemies
-    public GameObject[] Spawners;
+    public GameObject[] Spawners;  // ^ Same with spawners
     private GameObject CurrentSpawner;
-    public int Index;
+    public int Index;  //For which location to spawn enemy at
     private GameObject Player;
 
     void Start()
     {
         StartCoroutine(SpawnAnEnemy());
     }
+
     private void Update()
     {
        Player = GameObject.FindGameObjectWithTag("Player");
     }
+
     IEnumerator SpawnAnEnemy()
     {
-        //Vector2 SpawnPos = GameObject.Find("Player").transform.position;  //Grabs the players Position
-        // SpawnPos += Random.insideUnitCircle.normalized * SpawnRadius;  //Makes a circle and changes it's size by "SpawnRadius"
-
-
         Spawners = GameObject.FindGameObjectsWithTag("Spawner");  //Grabs the Spawners
         Index = Random.Range(0, Spawners.Length);  //Makes an Index that randomly picks a number
         CurrentSpawner = Spawners[Index];  //Makes CurrentSpawner a random Spawner from the array using the Index
@@ -39,5 +37,4 @@ public class EnemySpawner : MonoBehaviour
             StartCoroutine(SpawnAnEnemy());  //Loops back
         }
     }
-
 }

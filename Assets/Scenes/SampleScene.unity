@@ -2470,6 +2470,12 @@ MonoBehaviour:
     Pitch: 1
     Loop: 0
     Source: {fileID: 0}
+  - Name: FireBallExtinguished
+    Clip: {fileID: 8300000, guid: df3ce0c9b486973419dfde9912821839, type: 3}
+    Volume: 0.5
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
 --- !u!4 &1006970448
 Transform:
   m_ObjectHideFlags: 0
@@ -12756,6 +12762,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ScoreText1: {fileID: 165172470}
+  Difficulty: {fileID: 2112573554}
   Score: 0
 --- !u!4 &1796701971
 Transform:

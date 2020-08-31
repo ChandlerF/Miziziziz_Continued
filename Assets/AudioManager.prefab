@@ -1,0 +1,77 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4163854110450666812
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4163854110450666786}
+  - component: {fileID: 4163854110450666813}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4163854110450666786
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4163854110450666812}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.6132205, y: 0.13904706, z: -0.9344946}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4163854110450666813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4163854110450666812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c75a21eb0006ae4fb3478a23720f081, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Sounds:
+  - Name: PlayerDeath
+    Clip: {fileID: 8300000, guid: 82662734921f06641aa1a47f81ca168f, type: 3}
+    Volume: 0.8
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Name: EnemyDeath
+    Clip: {fileID: 8300000, guid: 7d4b0c2034acb50439d41243e31ecdfb, type: 3}
+    Volume: 0.5
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Name: Restart
+    Clip: {fileID: 8300000, guid: 7184b59f11394bd48ae653075afe5fb2, type: 3}
+    Volume: 0.8
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Name: ShootBow
+    Clip: {fileID: 8300000, guid: 4797cba5d96628e4286f2fe95986a0e0, type: 3}
+    Volume: 0.5
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Name: FireBallExtinguished
+    Clip: {fileID: 8300000, guid: df3ce0c9b486973419dfde9912821839, type: 3}
+    Volume: 0.5
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  Muted: 0

@@ -19,7 +19,7 @@ Have rounds that last every 10 enemies or so and after each round you can choose
 - Upgrades Ideas:
 A drone that circles around the player and occasionally shoots an enemy
 Can occasionally set down a trap
-A Second Life
+A 2nd Life
 (Needs Pathfinding) Can pour water/place barrels to make walls
 A Dash Ability
 

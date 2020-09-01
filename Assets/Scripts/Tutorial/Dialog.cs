@@ -43,9 +43,12 @@ public class Dialog : MonoBehaviour
             }
         } else if(Index == 2 && Moved == true)
         {
-            Index++;
-            TextDisplay.text = "";
-            StartCoroutine(Type());
+            if (TextDisplay.text == Sentences[Index])
+            {
+                Index++;
+                TextDisplay.text = "";
+                StartCoroutine(Type());
+            }
         } /*else if(Index == 4 && HasShot == true)
         {
             Index++;
@@ -91,10 +94,13 @@ public class Dialog : MonoBehaviour
         }
         if(Index == 4 && Input.GetMouseButtonDown(0))
         {
-            HasShot = true;
-            Index++;
-            TextDisplay.text = "";
-            StartCoroutine(Type());
+            if (TextDisplay.text == Sentences[Index])
+            {
+                HasShot = true;
+                Index++;
+                TextDisplay.text = "";
+                StartCoroutine(Type());
+            }
         }
         if(HasShot == true)
         {

@@ -812,7 +812,7 @@ MonoBehaviour:
   - You can also shoot incoming Projectiles
   - Goodluck and do your best!
   - 
-  TypingSpeed: 0.04
+  TypingSpeed: 0.03
   ContinueButton: {fileID: 985628940}
   Grid: {fileID: 2020709034}
   OriginalCamera: {fileID: 1326802906}

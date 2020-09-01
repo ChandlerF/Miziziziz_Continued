@@ -17,7 +17,7 @@ public class ScoringManager : MonoBehaviour
         {
             FindObjectOfType<AudioManager>().Play("Restart");
             Difficulty.ResetValues();  //Extra precaution towards a bug that saves the prefab's value from the last round (only for the first enemy though)
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene("Scene1");
             Time.timeScale = 1;
         }
 

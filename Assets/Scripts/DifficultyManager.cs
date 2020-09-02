@@ -23,9 +23,9 @@ public class DifficultyManager : MonoBehaviour
 
         if (Score > 3)  //Whenever the score hits 4 the difficulty starts increasing
         {
-            float EnemyNewSpeed = 4 + (Score / 10);
-            float NewFireRate = 3 - (Score / 25);
-            float WizardNewSpeed = 4 + (Score / 12);
+            float EnemyNewSpeed = 4 + (Score / 15);
+            float NewFireRate = 3 - (Score / 35);
+            float WizardNewSpeed = 4 + (Score / 25);
 
             foreach (GameObject Enemy in Enemies)
             {

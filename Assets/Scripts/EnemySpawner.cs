@@ -12,29 +12,29 @@ public class EnemySpawner : MonoBehaviour
     private GameObject CurrentSpawner;
     public int Index;  //For which location to spawn enemy at
     private GameObject Player;
-
-    void Start()
-    {
-        StartCoroutine(SpawnAnEnemy());
-    }
+    public float MaxEnemies = 10f;
+    public float CurrentEnemies = 1f;
 
     private void Update()
     {
        Player = GameObject.FindGameObjectWithTag("Player");
     }
 
-    IEnumerator SpawnAnEnemy()
+    public IEnumerator SpawnAnEnemy()
     {
-        Spawners = GameObject.FindGameObjectsWithTag("Spawner");  //Grabs the Spawners
-        Index = Random.Range(0, Spawners.Length);  //Makes an Index that randomly picks a number
-        CurrentSpawner = Spawners[Index];  //Makes CurrentSpawner a random Spawner from the array using the Index
-
-
-        Instantiate(Enemies[Random.Range(0, Enemies.Length)], CurrentSpawner.transform.position, Quaternion.identity);  //Randomly chooses from "Enemies" array and spawns them randomly inside of the circle
-        yield return new WaitForSeconds(time);  //Pauses the loop for "time"
-        if(Player != null)
+        if (CurrentEnemies <= MaxEnemies)
         {
-            StartCoroutine(SpawnAnEnemy());  //Loops back
+            Spawners = GameObject.FindGameObjectsWithTag("Spawner");  //Grabs the Spawners
+            Index = Random.Range(0, Spawners.Length);  //Makes an Index that randomly picks a number
+            CurrentSpawner = Spawners[Index];  //Makes CurrentSpawner a random Spawner from the array using the Index
+
+            CurrentEnemies++;
+            Instantiate(Enemies[Random.Range(0, Enemies.Length)], CurrentSpawner.transform.position, Quaternion.identity);  //Randomly chooses from "Enemies" array and spawns them randomly inside of the circle
+            yield return new WaitForSeconds(time);  //Pauses the loop for "time"
+            if (Player != null)
+            {
+                StartCoroutine(SpawnAnEnemy());  //Loops back
+            }
         }
     }
 }

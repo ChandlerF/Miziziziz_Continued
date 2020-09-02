@@ -3,7 +3,7 @@ Started Game Developement 8/18/2020 for Miz 1 Jam, The theme was to use the Art 
 
 - Need to do:
 Add a Pause Screen to both tutorial and Scene1
-Tone Down difficulty curve a bit
+Add Noise to every time it's a new round
 (Wizard moves faster than fireball?!?) Tone down Wizard speed
 Sometimes a wizard skips his first shot and waits for the timer to shoot "again" (his first time)
 Increase speed of text by lowering it to something like 0.3

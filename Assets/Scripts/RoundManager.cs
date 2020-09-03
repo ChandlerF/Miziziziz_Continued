@@ -16,6 +16,9 @@ public class RoundManager : MonoBehaviour
     public float[] PossibleValues = new float[] {10f, 20f, 30f, 40f, 50f, 60f, 70f, 80f, 90f, 100f };
     bool CanStartRound = false;
 
+    bool RoundThree = true;
+    public GameObject UpgradeManager;
+
     void Start()
     {
         Round = 0f;
@@ -26,6 +29,12 @@ public class RoundManager : MonoBehaviour
     void Update()
     {
         float Score = ScoreM.GetComponent<ScoringManager>().Score;
+
+        if(Round == 3 && RoundThree == true)
+        {
+            UpgradeManager.SetActive(true);
+            RoundThree = false;
+        }
 
         if (CurrentTimer >= 0 && StartTheTimer == true)
         {

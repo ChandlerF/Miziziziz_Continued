@@ -36,7 +36,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if(DashDelay <= 0)
             {
-                StartCoroutine(Dash(.5f));
+                StartCoroutine(Dash(.2f));  //Was .5
             }
         }
     }

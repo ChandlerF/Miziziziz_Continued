@@ -43,7 +43,6 @@ public class RoundManager : MonoBehaviour
         {
             if (CanStartRound == true)
             {
-                Debug.Log("Round Start");
                 RoundStart();
                 CanStartRound = false;
             }
@@ -67,7 +66,6 @@ public class RoundManager : MonoBehaviour
 
     void DisplayRound()  //Use Animator to make Machine States
     {
-        Debug.Log("Display Round");
         RoundDisplay.text = ("Round " + Round + "!");  //Need timer so player can read text
         RoundDisplay.GetComponent<Animator>().Play("RoundDisplayBoth");
     }

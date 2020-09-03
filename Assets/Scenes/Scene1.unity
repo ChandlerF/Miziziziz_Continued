@@ -13020,7 +13020,7 @@ PrefabInstance:
     - target: {fileID: 2089603534116095521, guid: 4a2bae803cd00da4db317aacb3c0845d,
         type: 3}
       propertyPath: DashSpeed
-      value: 20
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 2089603534116095521, guid: 4a2bae803cd00da4db317aacb3c0845d,
         type: 3}

@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
 
 
     public CameraShake Camera_Shake;
-    public bool UnlockedDash = true;
+    public bool UnlockedDash = false;
     public bool IsDashing = false;
     public float DashSpeed;
     public float DashDelay;

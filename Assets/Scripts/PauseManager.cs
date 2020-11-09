@@ -1,21 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseManager : MonoBehaviour
 {
-    public bool IsPaused = false;
     void Update()
     {
-        /*if (Input.GetKey("escape") && IsPaused == false)
+        if (Input.GetKey("escape"))
         {
-            IsPaused = true;
-            Time.timeScale = 0f;
+            SceneManager.LoadScene(0);
         }
-        else if (Input.GetKey("escape") && IsPaused == true)
-        {
-            IsPaused = false;
-            Time.timeScale = 1f;
-        } */
+        
     }
 }

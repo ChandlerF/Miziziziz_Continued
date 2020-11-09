@@ -11,6 +11,17 @@ public class DifficultyManager : MonoBehaviour
     public Wizard WizardScript;
 
 
+    //The bigger the numbers the easier the enemies
+
+    [Range(15f, 25f)]
+    public float KnightSpeedCurve;
+
+    [Range(35f, 45f)]
+    public float WizardFireRateCurve;
+
+    [Range(25f, 35f)]
+    public float WizardSpeedCurve;
+
     private void Awake()
     {
         ResetValues();
@@ -23,13 +34,13 @@ public class DifficultyManager : MonoBehaviour
 
         if (Score > 3)  //Whenever the score hits 4 the difficulty starts increasing
         {
-            float EnemyNewSpeed = 4 + (Score / 15);
-            float NewFireRate = 3 - (Score / 35);
-            float WizardNewSpeed = 4 + (Score / 25);
+            float KnightNewSpeed = 4 + (Score / KnightSpeedCurve);
+            float NewFireRate = 3 - (Score / WizardFireRateCurve);
+            float WizardNewSpeed = 4 + (Score / WizardSpeedCurve);
 
             foreach (GameObject Enemy in Enemies)
             {
-                EnemyScript.Speed = EnemyNewSpeed;
+                EnemyScript.Speed = KnightNewSpeed;
 
                 WizardScript.StartFireRate = NewFireRate;
                 WizardScript.Speed = WizardNewSpeed;

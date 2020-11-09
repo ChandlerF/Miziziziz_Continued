@@ -13,7 +13,7 @@ public class RoundManager : MonoBehaviour
     public float CurrentTimer;
     public bool StartTheTimer = false;
     public GameObject ScoreM;
-    public float[] PossibleValues = new float[] {10f, 20f, 30f, 40f, 50f, 60f, 70f, 80f, 90f, 100f };
+   // public float[] PossibleValues = new float[] {10f, 20f, 30f, 40f, 50f, 60f, 70f, 80f, 90f, 100f };
     bool CanStartRound = false;
 
     bool RoundThree = true;
@@ -48,7 +48,7 @@ public class RoundManager : MonoBehaviour
             StartCoroutine(EnemySpawner.SpawnAnEnemy());  //Spawn Enemies
         }
 
-        if (PossibleValues.Contains(Score))  //Bug where if more than 1 Enemy is killed at once then it doesnt register, if... there's more than 10 enemies a round
+        if (Score % 10 == 0)  //Bug where if more than 1 Enemy is killed at once then it doesnt register, if... there's more than 10 enemies a round
         {
             if (CanStartRound == true)
             {

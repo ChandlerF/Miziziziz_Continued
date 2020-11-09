@@ -13709,7 +13709,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 843b649985f219f468885028c51bfefc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsPaused: 0
 --- !u!4 &1804361652
 Transform:
   m_ObjectHideFlags: 0
@@ -13926,6 +13925,9 @@ MonoBehaviour:
     type: 3}
   WizardScript: {fileID: 2641738686152447919, guid: fc5e6e9bfb7e2e3408fe7426d6534082,
     type: 3}
+  KnightSpeedCurve: 20
+  WizardFireRateCurve: 40
+  WizardSpeedCurve: 30
 --- !u!4 &2112573555
 Transform:
   m_ObjectHideFlags: 0

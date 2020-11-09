@@ -23,7 +23,7 @@ TagManager:
   - Enemy
   - EnemyProjectile
   - Boundaries
-  - 
+  - Coin
   - 
   - 
   - 
@@ -53,6 +53,9 @@ TagManager:
     locked: 0
   - name: Ground2
     uniqueID: 2963394039
+    locked: 0
+  - name: Coins
+    uniqueID: 418941973
     locked: 0
   - name: Player
     uniqueID: 3578151775

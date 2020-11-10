@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
     public float MoveSpeed;
     public Rigidbody2D rb;
     Vector2 Movement;
-    [SerializeField] TMPro.TextMeshProUGUI ScoreText2;
+    [SerializeField] TMPro.TextMeshProUGUI DeathText;
 
 
     public CameraShake Camera_Shake;
@@ -65,9 +65,9 @@ public class PlayerMovement : MonoBehaviour
 
         FindObjectOfType<AudioManager>().Play("PlayerDeath");
 
-        ScoreText2.text = "You Died!";
-        ScoreText2.fontSize = 100;
-        Time.timeScale = 0;
+        DeathText.text = "You Died!";
+        DeathText.fontSize = 100;
+        Time.timeScale = 0f;
     }
 
 

@@ -6,11 +6,11 @@ public class EnemyMovement2 : MonoBehaviour
 {
     public float Speed;
     private Transform target;
-    public GameObject ScoreM;
+    private GameObject ScoreM;
 
     public GameObject Blood;
 
-    public CameraShake cameraShake;
+    private CameraShake cameraShake;
 
     void Start()
     {

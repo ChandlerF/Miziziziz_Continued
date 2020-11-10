@@ -68,7 +68,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -716815521
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 0db542223d246ae4bbefd0bca3309876, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -148,7 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e259281cd2d03d54ca6b3a76f9e349f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 5
+  Speed: 4
   ScoreM: {fileID: 0}
   Blood: {fileID: 862275935468567087, guid: dd5050f25473ab341856e1aee7d9864b, type: 3}
   cameraShake: {fileID: 0}

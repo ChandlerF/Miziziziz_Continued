@@ -9,7 +9,9 @@ public class PauseManager : MonoBehaviour
     {
         if (Input.GetKey("escape"))
         {
-            SceneManager.LoadScene(0);
+            Time.timeScale = 1f;
+            FindObjectOfType<AudioManager>().Play("Restart");
+            SceneManager.LoadScene("Menu");
         }
         
     }

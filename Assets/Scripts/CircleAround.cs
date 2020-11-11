@@ -5,12 +5,25 @@ using UnityEngine;
 public class CircleAround : MonoBehaviour
 {
 
-    public GameObject Coin;
+    private GameObject Coin;
     public GameObject Player;
     public float Speed;
 
+    private bool FoundCoin = false;
+
+    private void Start()
+    {
+        Coin = GameObject.FindGameObjectWithTag("Coin");
+    }
+
     private void Update()
     {
+
+        if(Coin == null)
+        {
+            Coin = GameObject.FindGameObjectWithTag("Coin");
+        }
+
 
         Vector3 vectorToTarget = Coin.transform.position - transform.position;
         float angle = Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg -90f;

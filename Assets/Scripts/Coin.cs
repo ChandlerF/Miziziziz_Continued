@@ -19,6 +19,5 @@ public class Coin : MonoBehaviour
         FindObjectOfType<AudioManager>().Play("CoinPickup");
         CoinManagerObject.AddCoinScore();
         CoinManagerObject.SpawnCoin();
-        Destroy(gameObject);
     }
 }

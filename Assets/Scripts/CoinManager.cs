@@ -7,16 +7,20 @@ public class CoinManager : MonoBehaviour
 
     public GameObject Player;
 
-    public GameObject Coin;
+    public GameObject PrefabCoin;
     private Vector2 SpawnLocation;
 
     [SerializeField] TMPro.TextMeshProUGUI CoinScoreText;
     private float CoinScore = 0f;
 
+    private bool FirstCoinSpawned = false;
+    private GameObject Coin;
+
     // Start is called before the first frame update
     void Start()
     {
         SpawnCoin();
+        Coin = GameObject.FindGameObjectWithTag("Coin");
     }
 
     // Update is called once per frame
@@ -32,7 +36,15 @@ public class CoinManager : MonoBehaviour
 
         if(Vector2.Distance(Player.transform.position,  SpawnLocation) > 5)
         {
-            Instantiate(Coin, SpawnLocation, Quaternion.identity);
+            if(FirstCoinSpawned == false)
+            {
+                Instantiate(PrefabCoin, SpawnLocation, Quaternion.identity);
+                FirstCoinSpawned = true;
+            }
+            else
+            {
+                Coin.transform.position = SpawnLocation;
+            }
         }
         else
         {

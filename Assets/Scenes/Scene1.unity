@@ -14243,7 +14243,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1775549624
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14601,13 +14601,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1569210059, guid: 4a2bae803cd00da4db317aacb3c0845d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1569210060, guid: 4a2bae803cd00da4db317aacb3c0845d, type: 3}
       propertyPath: Coin
       value: 
       objectReference: {fileID: 1284019913}
-    - target: {fileID: 1569210060, guid: 4a2bae803cd00da4db317aacb3c0845d, type: 3}
-      propertyPath: Speed
-      value: 20
+    - target: {fileID: 1959428477, guid: 4a2bae803cd00da4db317aacb3c0845d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2089603534116095521, guid: 4a2bae803cd00da4db317aacb3c0845d,
         type: 3}

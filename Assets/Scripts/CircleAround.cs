@@ -9,25 +9,17 @@ public class CircleAround : MonoBehaviour
     public GameObject Player;
     public float Speed;
 
-    private bool FoundCoin = false;
-
-    private void Start()
-    {
-        Coin = GameObject.FindGameObjectWithTag("Coin");
-    }
-
     private void Update()
     {
 
-        if(Coin == null)
+        if(Coin == null) //Looks for coin if it's null
         {
             Coin = GameObject.FindGameObjectWithTag("Coin");
         }
 
 
-        Vector3 vectorToTarget = Coin.transform.position - transform.position;
+        Vector3 vectorToTarget = Coin.transform.position - transform.position;  //Rotates-Moves Indicator
         float angle = Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg -90f;
-        //Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
     }
 

@@ -16,6 +16,8 @@ public class CoinManager : MonoBehaviour
     private bool FirstCoinSpawned = false;
     private GameObject Coin;
 
+    public float DistanceAwayFromPlayer;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,18 +25,13 @@ public class CoinManager : MonoBehaviour
         Coin = GameObject.FindGameObjectWithTag("Coin");
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void SpawnCoin()
     {
         SpawnLocation.x = Random.Range(-14f, 14f);
         SpawnLocation.y = Random.Range(-10f, 10f);
 
-        if(Vector2.Distance(Player.transform.position,  SpawnLocation) > 5)
+        if(Vector2.Distance(Player.transform.position,  SpawnLocation) > DistanceAwayFromPlayer)
         {
             if(FirstCoinSpawned == false)
             {

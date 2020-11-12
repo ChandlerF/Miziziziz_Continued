@@ -8,12 +8,6 @@ public class UpgradeManager : MonoBehaviour
     public BowController Bow;
 
     
-
-    void Update()
-    {
-
-    }
-
     public void IncreasePlayerSpeed()
     {
         Player.MoveSpeed += (Player.MoveSpeed / 5f);  //Speed goes from 5 to 6

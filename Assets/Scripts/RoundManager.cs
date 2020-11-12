@@ -16,8 +16,9 @@ public class RoundManager : MonoBehaviour
    // public float[] PossibleValues = new float[] {10f, 20f, 30f, 40f, 50f, 60f, 70f, 80f, 90f, 100f };
     public bool CanStartRound = false;
 
-    private bool FirstUpgradeAvailable = true;
+    private bool UpgradeAvailable = true;
     public GameObject UpgradeManager;
+ 
 
     void Start()
     {
@@ -31,10 +32,10 @@ public class RoundManager : MonoBehaviour
         float Score = ScoreM.GetComponent<ScoringManager>().Score;
 
 
-        if(Round == 4 && FirstUpgradeAvailable == true)
+        if(Round % 4 == 0 && UpgradeAvailable == true)
         {
             UpgradeManager.SetActive(true);
-            FirstUpgradeAvailable = false;
+            UpgradeAvailable = false;
         }
 
 
@@ -52,7 +53,7 @@ public class RoundManager : MonoBehaviour
         }
 
 
-        if(Score == 30)     // if(Score % 30 == 0)
+        if(Score == 20)     // if(Score % 20 == 0)
         {   
             if(CanStartRound == true)
             {

@@ -14,7 +14,7 @@ public class RoundManager : MonoBehaviour
     public bool StartTheTimer = false;
     public GameObject ScoreM;
    // public float[] PossibleValues = new float[] {10f, 20f, 30f, 40f, 50f, 60f, 70f, 80f, 90f, 100f };
-    bool CanStartRound = false;
+    public bool CanStartRound = false;
 
     private bool FirstUpgradeAvailable = true;
     public GameObject UpgradeManager;
@@ -22,7 +22,7 @@ public class RoundManager : MonoBehaviour
     void Start()
     {
         Round = 0f;
-        RoundStart();
+        RoundStart(); 
         CurrentTimer = Timer;
     }
 
@@ -30,16 +30,19 @@ public class RoundManager : MonoBehaviour
     {
         float Score = ScoreM.GetComponent<ScoringManager>().Score;
 
+
         if(Round == 4 && FirstUpgradeAvailable == true)
         {
             UpgradeManager.SetActive(true);
             FirstUpgradeAvailable = false;
         }
 
+
         if (CurrentTimer >= 0 && StartTheTimer == true)
         {
             CurrentTimer -= Time.deltaTime;
         }
+
 
         if (CurrentTimer <= 0 && EnemySpawner.CurrentEnemies == 1f)
         {
@@ -47,12 +50,17 @@ public class RoundManager : MonoBehaviour
             StartTheTimer = false;
             StartCoroutine(EnemySpawner.SpawnAnEnemy());  //Spawn Enemies
         }
+
+
         if(Score == 30)     // if(Score % 30 == 0)
-        {
-            Round++;
-            DisplayRound();
-            EnemySpawner.BossRound();
-            
+        {   
+            if(CanStartRound == true)
+            {
+                Round++;
+                DisplayRound();
+                EnemySpawner.BossRound();
+                CanStartRound = false;
+            }            
         }
         else if (Score % 10 == 0)  //Bug where if more than 1 Enemy is killed at once then it doesnt register, if... there's more than 10 enemies a round
         {

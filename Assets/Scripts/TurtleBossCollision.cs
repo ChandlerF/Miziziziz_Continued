@@ -12,11 +12,13 @@ public class TurtleBossCollision : MonoBehaviour
     private CameraShake cameraShake;
     public Animator anim;
 
+    private GameObject RoundManager;
 
     void Start()
     {
         ScoreM = GameObject.Find("ScoringManager");
         cameraShake = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraShake>();
+        RoundManager = GameObject.Find("Round Manager");
     }
 
     void Update()
@@ -24,6 +26,7 @@ public class TurtleBossCollision : MonoBehaviour
         if(Health <= 0)
         {
             ScoreM.GetComponent<ScoringManager>().Score += 10;
+            RoundManager.GetComponent<RoundManager>().CanStartRound = true;
             Destroy(Turtle);
         }
 

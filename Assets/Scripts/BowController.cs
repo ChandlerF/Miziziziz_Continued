@@ -8,7 +8,7 @@ public class BowController : MonoBehaviour
     public float ArrowSpeed;
 
     public float StartShootDelay;
-    public float ShootDelay;
+    private float ShootDelay;
 
 
     private void Start()

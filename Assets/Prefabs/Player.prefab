@@ -731,5 +731,4 @@ MonoBehaviour:
   ArrowPrefab: {fileID: 4746821972825965452, guid: b9389aa80becd1e40ae6b60231cd4370,
     type: 3}
   ArrowSpeed: 15
-  StartShootDelay: 0.3
-  ShootDelay: 0
+  StartShootDelay: 0.5

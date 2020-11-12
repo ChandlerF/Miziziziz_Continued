@@ -14133,6 +14133,7 @@ MonoBehaviour:
   CurrentTimer: 0
   StartTheTimer: 0
   ScoreM: {fileID: 1796701969}
+  CanStartRound: 0
   UpgradeManager: {fileID: 433050081}
 --- !u!4 &1677838526
 Transform:
@@ -14500,9 +14501,9 @@ MonoBehaviour:
     type: 3}
   WizardScript: {fileID: 2641738686152447919, guid: fc5e6e9bfb7e2e3408fe7426d6534082,
     type: 3}
-  KnightSpeedCurve: 20
-  WizardFireRateCurve: 40
-  WizardSpeedCurve: 30
+  KnightSpeedCurve: 25
+  WizardFireRateCurve: 45
+  WizardSpeedCurve: 35
 --- !u!4 &2112573555
 Transform:
   m_ObjectHideFlags: 0

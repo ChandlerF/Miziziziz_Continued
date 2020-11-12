@@ -25,7 +25,7 @@ public class TurtleBossCollision : MonoBehaviour
     {
         if(Health <= 0)
         {
-            ScoreM.GetComponent<ScoringManager>().Score += 10;
+            //ScoreM.GetComponent<ScoringManager>().Score += 10;    //Makes a big speed increase in enemies
             RoundManager.GetComponent<RoundManager>().CanStartRound = true;
             Destroy(Turtle);
         }

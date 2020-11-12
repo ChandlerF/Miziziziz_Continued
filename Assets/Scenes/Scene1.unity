@@ -11221,7 +11221,7 @@ MonoBehaviour:
   PrefabCoin: {fileID: 8782683302268601949, guid: dc5d4739390b11a41b4585991ec1561c,
     type: 3}
   CoinScoreText: {fileID: 318953707}
-  DistanceAwayFromPlayer: 8
+  DistanceAwayFromPlayer: 10
 --- !u!4 &1115381017
 Transform:
   m_ObjectHideFlags: 0

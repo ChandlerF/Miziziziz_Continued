@@ -9,6 +9,7 @@ TagManager:
   - Arrow
   - EnemyProjectile
   - Coin
+  - Boss
   layers:
   - Default
   - TransparentFX

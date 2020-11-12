@@ -41,10 +41,6 @@ public class TurtleBossMovement : MonoBehaviour
 
 
 
-
-
-
-
         if(Charge == true)
         {
             if (Vector3.Distance(transform.position, ChargingTarget) > .01f)

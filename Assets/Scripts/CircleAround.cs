@@ -4,23 +4,20 @@ using UnityEngine;
 
 public class CircleAround : MonoBehaviour
 {
-
-    private GameObject Coin;
-    public GameObject Player;
+    public float Radius;
+    public float Angle;
     public float Speed;
+    public GameObject Parent;
 
     private void Update()
     {
+        Vector3 Pos = transform.position;
+        Pos.x = Mathf.Cos(Angle) * Radius;
+        Pos.y = Mathf.Sin(Angle) * Radius;
 
-        if(Coin == null) //Looks for coin if it's null
-        {
-            Coin = GameObject.FindGameObjectWithTag("Coin");
-        }
+        Angle += Speed;
+        transform.position = Pos + Parent.transform.position;
 
-
-        Vector3 vectorToTarget = Coin.transform.position - transform.position;  //Rotates-Moves Indicator
-        float angle = Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg -90f;
-        transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
     }
 
 

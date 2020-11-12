@@ -16,7 +16,7 @@ public class RoundManager : MonoBehaviour
    // public float[] PossibleValues = new float[] {10f, 20f, 30f, 40f, 50f, 60f, 70f, 80f, 90f, 100f };
     bool CanStartRound = false;
 
-    bool RoundThree = true;
+    private bool FirstUpgradeAvailable = true;
     public GameObject UpgradeManager;
 
     void Start()
@@ -30,10 +30,10 @@ public class RoundManager : MonoBehaviour
     {
         float Score = ScoreM.GetComponent<ScoringManager>().Score;
 
-        if(Round == 3 && RoundThree == true)
+        if(Round == 4 && FirstUpgradeAvailable == true)
         {
             UpgradeManager.SetActive(true);
-            RoundThree = false;
+            FirstUpgradeAvailable = false;
         }
 
         if (CurrentTimer >= 0 && StartTheTimer == true)
@@ -47,8 +47,14 @@ public class RoundManager : MonoBehaviour
             StartTheTimer = false;
             StartCoroutine(EnemySpawner.SpawnAnEnemy());  //Spawn Enemies
         }
-
-        if (Score % 10 == 0)  //Bug where if more than 1 Enemy is killed at once then it doesnt register, if... there's more than 10 enemies a round
+        if(Score == 30)     // if(Score % 30 == 0)
+        {
+            Round++;
+            DisplayRound();
+            EnemySpawner.BossRound();
+            
+        }
+        else if (Score % 10 == 0)  //Bug where if more than 1 Enemy is killed at once then it doesnt register, if... there's more than 10 enemies a round
         {
             if (CanStartRound == true)
             {

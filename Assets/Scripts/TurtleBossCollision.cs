@@ -7,17 +7,24 @@ public class TurtleBossCollision : MonoBehaviour
 
     public FlashWhenDamaged FlashScript;
     public float Health;
+    public GameObject Turtle;
+    private GameObject ScoreM;
+    private CameraShake cameraShake;
+    public Animator anim;
+
 
     void Start()
     {
-        
+        ScoreM = GameObject.Find("ScoringManager");
+        cameraShake = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraShake>();
     }
 
     void Update()
     {
         if(Health <= 0)
         {
-            Destroy(gameObject);
+            ScoreM.GetComponent<ScoringManager>().Score += 10;
+            Destroy(Turtle);
         }
 
     }
@@ -25,8 +32,10 @@ public class TurtleBossCollision : MonoBehaviour
     {
         if (collision.gameObject.tag == "Arrow")
         {
+            cameraShake.ShakeCamera();
             Health -= 1;
             FlashScript.Flash();
+            anim.Play("TurtleBossRotate");
         }
     }
 }

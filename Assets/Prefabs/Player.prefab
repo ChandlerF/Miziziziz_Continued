@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1569210059}
-  - component: {fileID: 1569210060}
+  - component: {fileID: 202962761}
   m_Layer: 8
   m_Name: Coin Indicator
   m_TagString: Untagged
@@ -25,14 +25,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1569210058}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 1959428477}
   m_Father: {fileID: 2089603534116095524}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1569210060
+--- !u!114 &202962761
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,12 +41,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1569210058}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73acdf74760c8484ba4b7d2c7bde2705, type: 3}
+  m_Script: {fileID: 11500000, guid: da006fefe4186d847a0d82ee9ee52418, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Coin: {fileID: 0}
-  Player: {fileID: 2089603534116095527}
-  Speed: 20
 --- !u!1 &1959428476
 GameObject:
   m_ObjectHideFlags: 0
@@ -72,7 +69,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1959428476}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1569210059}
@@ -422,7 +419,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2089603534116095527}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 0e3ec747ac7bf584291b00f1a87aaa53, type: 3}

@@ -15,6 +15,8 @@ public class EnemySpawner : MonoBehaviour
     public float MaxEnemies = 10f;
     public float CurrentEnemies = 1f;
 
+    public GameObject[] Bosses;
+
     private void Update()
     {
        Player = GameObject.FindGameObjectWithTag("Player");
@@ -36,5 +38,16 @@ public class EnemySpawner : MonoBehaviour
                 StartCoroutine(SpawnAnEnemy());  //Loops back
             }
         }
+    }
+
+
+
+    public void BossRound()
+    {
+        Spawners = GameObject.FindGameObjectsWithTag("Spawner");  
+        Index = Random.Range(0, Spawners.Length);  
+        CurrentSpawner = Spawners[Index];
+
+        Instantiate(Bosses[0], CurrentSpawner.transform.position, Quaternion.identity);
     }
 }

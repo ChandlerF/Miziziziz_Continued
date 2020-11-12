@@ -15,13 +15,15 @@ public class TurtleBossCollision : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(Health);
+        if(Health <= 0)
+        {
+            Destroy(gameObject);
+        }
+
     }
-
-
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Arrow")
+        if (collision.gameObject.tag == "Arrow")
         {
             Health -= 1;
             FlashScript.Flash();

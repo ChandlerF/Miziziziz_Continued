@@ -13,13 +13,13 @@ public class DifficultyManager : MonoBehaviour
 
     //The bigger the numbers the easier the enemies
 
-    [Range(15f, 25f)]
+    [Range(25f, 35f)]
     public float KnightSpeedCurve;
 
-    [Range(35f, 45f)]
+    [Range(45f, 55f)]
     public float WizardFireRateCurve;
 
-    [Range(25f, 35f)]
+    [Range(35f, 45f)]
     public float WizardSpeedCurve;
 
     private void Awake()

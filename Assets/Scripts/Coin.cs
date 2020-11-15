@@ -17,7 +17,7 @@ public class Coin : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         FindObjectOfType<AudioManager>().Play("CoinPickup");
-        CoinManagerObject.AddCoinScore();
+        CoinManagerObject.AddCoinScore(1);
         CoinManagerObject.SpawnCoin();
     }
 }

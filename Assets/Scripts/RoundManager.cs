@@ -18,7 +18,7 @@ public class RoundManager : MonoBehaviour
 
     private bool UpgradeAvailable = true;
     public GameObject UpgradeManager;
- 
+    public bool BeatBoss = false;
 
     void Start()
     {
@@ -32,7 +32,7 @@ public class RoundManager : MonoBehaviour
         float Score = ScoreM.GetComponent<ScoringManager>().Score;
 
 
-        if(Round % 4 == 0 && UpgradeAvailable == true)
+        if(Round % 3 == 0 && UpgradeAvailable == true)
         {
             UpgradeManager.SetActive(true);
             UpgradeAvailable = false;
@@ -51,11 +51,16 @@ public class RoundManager : MonoBehaviour
             StartTheTimer = false;
             StartCoroutine(EnemySpawner.SpawnAnEnemy());  //Spawn Enemies
         }
+       
 
+       /* if(Score == 20)
+        {
+            BeatBoss = false;       // Round Before Boss
+        }
 
-        if(Score == 20)     // if(Score % 20 == 0)
-        {   
-            if(CanStartRound == true)
+        if(Score == 30)     // if round is a multiple of 2      Round % 2 == 0
+        {
+            if(CanStartRound == true && BeatBoss == false)
             {
                 Round++;
                 DisplayRound();
@@ -63,7 +68,7 @@ public class RoundManager : MonoBehaviour
                 CanStartRound = false;
             }            
         }
-        else if (Score % 10 == 0)  //Bug where if more than 1 Enemy is killed at once then it doesnt register, if... there's more than 10 enemies a round
+        else */if (Score % 10 == 0)  //If score is a multiple of max enemies (10)         Score % EnemySpawner.MaxEnemies == 0
         {
             if (CanStartRound == true)
             {
@@ -81,6 +86,7 @@ public class RoundManager : MonoBehaviour
 
     public void RoundStart()
     {
+        UpgradeAvailable = true;
         StopCoroutine(EnemySpawner.SpawnAnEnemy());
         EnemySpawner.CurrentEnemies = 1f;
         Round ++;

@@ -12,7 +12,7 @@ public class EnemySpawner : MonoBehaviour
     private GameObject CurrentSpawner;
     public int Index;  //For which location to spawn enemy at
     private GameObject Player;
-    public float MaxEnemies = 10f;
+    public float MaxEnemies;
     public float CurrentEnemies = 1f;
 
     public GameObject[] Bosses;

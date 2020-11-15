@@ -8,7 +8,8 @@ public class TurtleBossCollision : MonoBehaviour
     public FlashWhenDamaged FlashScript;
     public float Health;
     public GameObject Turtle;
-    private GameObject ScoreM;
+    //private GameObject ScoreM;
+    private GameObject CoinManager;
     private CameraShake cameraShake;
     public Animator anim;
 
@@ -16,7 +17,8 @@ public class TurtleBossCollision : MonoBehaviour
 
     void Start()
     {
-        ScoreM = GameObject.Find("ScoringManager");
+        //ScoreM = GameObject.Find("ScoringManager");
+        CoinManager = GameObject.Find("CoinManager");
         cameraShake = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraShake>();
         RoundManager = GameObject.Find("Round Manager");
     }
@@ -25,7 +27,9 @@ public class TurtleBossCollision : MonoBehaviour
     {
         if(Health <= 0)
         {
-            //ScoreM.GetComponent<ScoringManager>().Score += 10;    //Makes a big speed increase in enemies
+            //ScoreM.GetComponent<ScoringManager>().Score += 1;
+            CoinManager.GetComponent<CoinManager>().AddCoinScore(5);
+            RoundManager.GetComponent<RoundManager>().BeatBoss = true;
             RoundManager.GetComponent<RoundManager>().CanStartRound = true;
             Destroy(Turtle);
         }

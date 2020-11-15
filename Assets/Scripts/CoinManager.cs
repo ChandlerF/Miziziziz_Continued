@@ -49,9 +49,9 @@ public class CoinManager : MonoBehaviour
         }
     }
 
-    public void AddCoinScore()
+    public void AddCoinScore(int x)
     {
-        CoinScore += 1;
+        CoinScore += x;
         CoinScoreText.text = CoinScore.ToString();
     }
 }

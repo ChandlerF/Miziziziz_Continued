@@ -11,10 +11,35 @@ public class UpgradeManager : MonoBehaviour
     public float SpeedIncreaseCost;
     public float FireRateIncreaseCost;
     public float DashCost;
+    public float CoinIndicatorCost;
 
+                                            //Probably easier to use Scriptable Objects for shop
+                                            //Set CoinIndicatorUI to have same position and scale as Dash
+                                            //Should probably limit how many times you can upgrade/raise cost for upgrade
+    public GameObject PlayerSpeedUI;
+    public GameObject FireRateUI;
+    public GameObject DashUI;
+    public GameObject CoinIndicatorUI;      //Starts off disabled
+
+    
+    
+    public GameObject CoinIndicator;
 
   
 
+
+    public void UnlockCoinIndicator()
+    {
+    if(Coin.CoinScore >= CoinIndicatorCost)
+     {
+      Coin.TakeFromCoinScore(CoinIndicatorCost);
+      CoinIndicatorUI.SetActive(False);
+      CoinIndicator.SetActive(True);
+      CloseUpgradeMenu;
+     }
+    }
+
+    
     public void IncreasePlayerSpeed()
     {
         if(Coin.CoinScore >= SpeedIncreaseCost)
@@ -24,6 +49,8 @@ public class UpgradeManager : MonoBehaviour
             CloseUpgradeMenu();
         }
     }
+
+
 
     public void IncreasePlayerFireRate()
     {
@@ -35,15 +62,21 @@ public class UpgradeManager : MonoBehaviour
         }
     }
 
+
+
     public void UnlockDash()
     {
         if(Coin.CoinScore >= DashCost)
         {
             Coin.TakeFromCoinScore(DashCost);
             Player.UnlockedDash = true;
+            CoinIndicatorUI.SetActive(False);
+            DashUI.SetActive(True);
             CloseUpgradeMenu();
         }
     }
+
+
 
     public void CloseUpgradeMenu()
     {

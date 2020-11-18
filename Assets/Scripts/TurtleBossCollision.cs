@@ -29,8 +29,8 @@ public class TurtleBossCollision : MonoBehaviour
         {
             //ScoreM.GetComponent<ScoringManager>().Score += 1;
             CoinManager.GetComponent<CoinManager>().AddCoinScore(5);
-            RoundManager.GetComponent<RoundManager>().BeatBoss = true;
-            RoundManager.GetComponent<RoundManager>().CanStartRound = true;
+            RoundManager.GetComponent<RoundManager>().UpgradeManager.SetActive(true);
+            RoundManager.GetComponent<RoundManager>().RoundStart();
             Destroy(Turtle);
         }
 

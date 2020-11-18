@@ -16,15 +16,20 @@ public class RoundManager : MonoBehaviour
    // public float[] PossibleValues = new float[] {10f, 20f, 30f, 40f, 50f, 60f, 70f, 80f, 90f, 100f };
     public bool CanStartRound = false;
 
-    private bool UpgradeAvailable = true;
+    //private bool UpgradeAvailable = true;
     public GameObject UpgradeManager;
-    public bool BeatBoss = false;
+    public bool SpawnedBoss = false;
+    private float EnemiesKilledToSpawn;
+    private float EnemiesKilledWhenBossIsSpawned = -1f;
+    public RoundDisplayUI RoundUI;
+
 
     void Start()
     {
         Round = 0f;
         RoundStart(); 
         CurrentTimer = Timer;
+        EnemiesKilledToSpawn = EnemySpawner.MaxEnemies * 2f;
     }
 
     void Update()
@@ -32,11 +37,11 @@ public class RoundManager : MonoBehaviour
         float Score = ScoreM.GetComponent<ScoringManager>().Score;
 
 
-        if(Round % 3 == 0 && UpgradeAvailable == true)
+        /*if(Round % 4 == 0 && UpgradeAvailable == true)
         {
             UpgradeManager.SetActive(true);
             UpgradeAvailable = false;
-        }
+        }*/
 
 
         if (CurrentTimer >= 0 && StartTheTimer == true)
@@ -53,22 +58,20 @@ public class RoundManager : MonoBehaviour
         }
        
 
-       /* if(Score == 20)
-        {
-            BeatBoss = false;       // Round Before Boss
-        }
 
-        if(Score == 30)     // if round is a multiple of 2      Round % 2 == 0
+        if(Score % EnemiesKilledToSpawn == 0 && SpawnedBoss == false)     // if round is a multiple of 2      Round % 2 == 0
         {
-            if(CanStartRound == true && BeatBoss == false)
+            EnemiesKilledWhenBossIsSpawned = Score;
+            if (CanStartRound == true)
             {
                 Round++;
                 DisplayRound();
                 EnemySpawner.BossRound();
                 CanStartRound = false;
-            }            
+            }
+                SpawnedBoss = true;
         }
-        else */if (Score % 10 == 0)  //If score is a multiple of max enemies (10)         Score % EnemySpawner.MaxEnemies == 0
+        else if (Score % 10 == 0)  //If score is a multiple of max enemies (10)         Score % EnemySpawner.MaxEnemies == 0
         {
             if (CanStartRound == true)
             {
@@ -76,9 +79,13 @@ public class RoundManager : MonoBehaviour
                 CanStartRound = false;
             }
         }
-        else
+        if (Score % 10 != 0)
         {
             CanStartRound = true;
+        }
+        if(Score > EnemiesKilledWhenBossIsSpawned)
+        {
+            SpawnedBoss = false;
         }
 
 
@@ -86,7 +93,7 @@ public class RoundManager : MonoBehaviour
 
     public void RoundStart()
     {
-        UpgradeAvailable = true;
+        //RoundUI.NewRound();
         StopCoroutine(EnemySpawner.SpawnAnEnemy());
         EnemySpawner.CurrentEnemies = 1f;
         Round ++;

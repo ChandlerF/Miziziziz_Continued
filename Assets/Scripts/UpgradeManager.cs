@@ -7,23 +7,42 @@ public class UpgradeManager : MonoBehaviour
     public PlayerMovement Player;
     public BowController Bow;
 
-    
+    public CoinManager Coin;
+    public float SpeedIncreaseCost;
+    public float FireRateIncreaseCost;
+    public float DashCost;
+
+
+  
+
     public void IncreasePlayerSpeed()
     {
-        Player.MoveSpeed += (Player.MoveSpeed / 5f);  //Speed goes from 5 to 6
-        CloseUpgradeMenu();
+        if(Coin.CoinScore >= SpeedIncreaseCost)
+        {
+            Coin.TakeFromCoinScore(SpeedIncreaseCost);
+            Player.MoveSpeed += (Player.MoveSpeed / 5f);  //Speed goes from 5 to 6
+            CloseUpgradeMenu();
+        }
     }
 
     public void IncreasePlayerFireRate()
     {
-        Bow.StartShootDelay -= (Bow.StartShootDelay / 5f);  //Delay between shots goes from .3 to .24
-        CloseUpgradeMenu();
+        if(Coin.CoinScore >= FireRateIncreaseCost)
+        {
+            Coin.TakeFromCoinScore(FireRateIncreaseCost);
+            Bow.StartShootDelay -= (Bow.StartShootDelay / 5f);  //Delay between shots goes from .3 to .24
+            CloseUpgradeMenu();
+        }
     }
 
     public void UnlockDash()
     {
-        Player.UnlockedDash = true;
-        CloseUpgradeMenu();
+        if(Coin.CoinScore >= DashCost)
+        {
+            Coin.TakeFromCoinScore(DashCost);
+            Player.UnlockedDash = true;
+            CloseUpgradeMenu();
+        }
     }
 
     public void CloseUpgradeMenu()

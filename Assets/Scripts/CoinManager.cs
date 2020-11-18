@@ -11,7 +11,7 @@ public class CoinManager : MonoBehaviour
     private Vector2 SpawnLocation;
 
     [SerializeField] TMPro.TextMeshProUGUI CoinScoreText;
-    private float CoinScore = 0f;
+    public float CoinScore = 0f;
 
     private bool FirstCoinSpawned = false;
     private GameObject Coin;
@@ -52,6 +52,12 @@ public class CoinManager : MonoBehaviour
     public void AddCoinScore(int x)
     {
         CoinScore += x;
+        CoinScoreText.text = CoinScore.ToString();
+    }
+
+    public void TakeFromCoinScore(float x)
+    {
+        CoinScore -= x;
         CoinScoreText.text = CoinScore.ToString();
     }
 }

@@ -325,7 +325,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FlashScript: {fileID: 3469326644567482988}
-  Health: 1
+  Health: 20
   Turtle: {fileID: 3469326644567482985}
   anim: {fileID: 3469326644567482978}
 --- !u!114 &3469326645515011006

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class UpgradeManager : MonoBehaviour
 {
@@ -21,8 +22,13 @@ public class UpgradeManager : MonoBehaviour
     public GameObject DashUI;
     public GameObject CoinIndicatorUI;      //Starts off disabled
 
-    
-    
+    public TextMeshProUGUI SpeedCostText;
+    public TextMeshProUGUI FireRateCostText;
+    public TextMeshProUGUI DashCostText;
+    public TextMeshProUGUI CoinIndicatorCostText;
+
+
+
     public GameObject CoinIndicator;
 
   
@@ -33,9 +39,10 @@ public class UpgradeManager : MonoBehaviour
     if(Coin.CoinScore >= CoinIndicatorCost)
      {
       Coin.TakeFromCoinScore(CoinIndicatorCost);
-      CoinIndicatorUI.SetActive(False);
-      CoinIndicator.SetActive(True);
-      CloseUpgradeMenu;
+      CoinIndicatorUI.SetActive(false);
+      DashUI.SetActive(true);
+      CoinIndicator.SetActive(true);
+      CloseUpgradeMenu();
      }
     }
 
@@ -70,8 +77,7 @@ public class UpgradeManager : MonoBehaviour
         {
             Coin.TakeFromCoinScore(DashCost);
             Player.UnlockedDash = true;
-            CoinIndicatorUI.SetActive(False);
-            DashUI.SetActive(True);
+            DashUI.SetActive(false);
             CloseUpgradeMenu();
         }
     }
@@ -79,6 +85,21 @@ public class UpgradeManager : MonoBehaviour
 
 
     public void CloseUpgradeMenu()
+    {
+        SpeedIncreaseCost += 5;
+        CoinIndicatorCost += 5; 
+        FireRateIncreaseCost += 5;
+        DashCost += 5;
+
+        SpeedCostText.text = SpeedIncreaseCost.ToString();
+        FireRateCostText.text = FireRateIncreaseCost.ToString();
+        DashCostText.text = DashCost.ToString();
+        CoinIndicatorCostText.text = CoinIndicatorCost.ToString();
+
+        gameObject.SetActive(false);
+    }
+
+    public void OnlyCloseUpgradeMenu()
     {
         gameObject.SetActive(false);
     }

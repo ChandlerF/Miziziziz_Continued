@@ -93,7 +93,6 @@ public class RoundManager : MonoBehaviour
 
     public void RoundStart()
     {
-        //RoundUI.NewRound();
         StopCoroutine(EnemySpawner.SpawnAnEnemy());
         EnemySpawner.CurrentEnemies = 1f;
         Round ++;
@@ -103,6 +102,7 @@ public class RoundManager : MonoBehaviour
 
     void DisplayRound()  //Use Animator to make Machine States
     {
+        RoundUI.NewRound();
         RoundDisplay.text = ("Round " + Round + "!");  //Need timer so player can read text
         RoundDisplay.GetComponent<Animator>().Play("RoundDisplayBoth");
     }

@@ -23,6 +23,7 @@ public class RoundManager : MonoBehaviour
     private float EnemiesKilledWhenBossIsSpawned = -1f;
     public RoundDisplayUI RoundUI;
 
+    public CoinManager CoinManager;
 
     void Start()
     {
@@ -105,5 +106,12 @@ public class RoundManager : MonoBehaviour
         RoundUI.NewRound();
         RoundDisplay.text = ("Round " + Round + "!");  //Need timer so player can read text
         RoundDisplay.GetComponent<Animator>().Play("RoundDisplayBoth");
+    }
+
+    public void BossDeath()
+    {
+        CoinManager.GetComponent<CoinManager>().AddCoinScore(5);
+        UpgradeManager.SetActive(true);
+        RoundStart();
     }
 }

@@ -17,24 +17,25 @@ public class RoundDisplayUI : MonoBehaviour
     }
 
     public void NewRound()
-    {
-         if(x > RoundIcons.Length)
-        {
-            for (int i = 0; i < (RoundIcons.Length + 1); i++)
-            {
-                if(i <= RoundIcons.Length)
-                {
-                    RoundIcons[i].color = Color.white;
-                }
-            }
-        }
-        
-        
-         if (x < RoundIcons.Length)
+    {   
+         if (x <= 9)
          {
           x++;
           RoundIcons[x].color = Color.red;
          }
-        
+
+        if (x >= 10)
+        {
+            for (int i = 0; i < (x); i++)
+            {
+                if (i <= RoundIcons.Length)
+                {
+                    RoundIcons[i].color = Color.white;
+                }
+            }
+
+            x = 1;
+        }
+
     }
 }

@@ -23,7 +23,7 @@ public class DruidMovement : MonoBehaviour
     public FlashWhenDamaged FlashScript;
     private Vector2 RunAwayLocation;
 
-    public bool ChasePlayer = true;
+    public bool ChasePlayer;
 
     void Start()
     {
@@ -43,7 +43,7 @@ public class DruidMovement : MonoBehaviour
 
         if (Health <= 0)
         {
-            RoundManager.GetComponent<RoundManager>().BossDeath();
+            //RoundManager.GetComponent<RoundManager>().BossDeath();
             Destroy(gameObject);
         }
     }
